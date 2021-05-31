@@ -1,6 +1,12 @@
 <template>
   <form>
-    <input type="text" name="busca" id="busca" v-model="busca" placeholder="Buscar ..."/>
+    <input
+      type="text"
+      name="busca"
+      id="busca"
+      v-model="busca"
+      placeholder="Buscar ..."
+    />
     <input
       type="submit"
       value="Buscar"
@@ -30,6 +36,7 @@ form {
   max-width: 600px;
   margin: 30px auto 60px auto;
   position: relative;
+  padding: 0 10px;
 }
 #busca {
   width: 100%;

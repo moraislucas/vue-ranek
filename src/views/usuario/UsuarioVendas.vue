@@ -23,6 +23,7 @@
         </div>
       </div>
     </div>
+    <PaginaCarregando v-else />
   </section>
 </template>
 
@@ -58,6 +59,7 @@ export default {
     if (this.login) {
       this.getVendas();
     }
+    document.title = 'Usuário | Vendas'
   },
 };
 </script>
@@ -69,7 +71,7 @@ export default {
 .vendedor span {
   color: #e80;
 }
-.entrega{
+.entrega {
   display: grid;
   grid-template-columns: minmax(100px, 200px) 1fr;
   gap: 20px;
@@ -78,8 +80,17 @@ export default {
 h2 {
   margin-bottom: 20px;
 }
-h3{
+h3 {
   margin: 0;
   justify-self: end;
+}
+@media screen and (max-width: 500px) {
+  .entrega {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  h3 {
+    justify-self: start;
+  }
 }
 </style>

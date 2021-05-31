@@ -16,7 +16,9 @@
           </button>
           <FinalizarCompra v-else :produto="produto" />
         </transition>
-        <button class="btn btn-disabled" disabled v-else>Produto Vendido</button>
+        <button class="btn btn-disabled" disabled v-else>
+          Produto Vendido
+        </button>
       </div>
     </div>
     <PaginaCarregando v-else />
@@ -44,6 +46,7 @@ export default {
       this.produto = null;
       api.get(`/produto/${this.id}`).then((response) => {
         this.produto = response.data;
+        document.title = this.produto.nome;
       });
     },
   },
@@ -61,6 +64,17 @@ export default {
   max-width: 900px;
   padding: 60px 20px;
   margin: 0 auto;
+}
+@media screen and (max-width: 500px) {
+  .produto {
+    grid-template-columns: 1fr;
+  }
+  .fotos {
+    grid-row: 2;
+  }
+  .info {
+    position: initial;
+  }
 }
 .preco {
   color: #e80;

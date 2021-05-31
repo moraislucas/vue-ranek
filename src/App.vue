@@ -110,6 +110,7 @@ textarea {
   font-size: 1rem;
   font-family: "Montserrat", sans-serif;
   margin-bottom: 15px;
+  width: 100%;
 }
 input:hover,
 textarea:hover,

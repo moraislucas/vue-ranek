@@ -36,6 +36,9 @@ export default {
       this.$router.push("/login");
     },
   },
+  created() {
+    document.title = "Usuário";
+  },
 };
 </script>
 
@@ -48,7 +51,7 @@ export default {
   gap: 30px;
   padding: 20px;
 }
-@media screnn and (max-width: 500px) {
+@media screen and (max-width: 500px) {
   .usuario {
     grid-template-columns: 1fr;
     margin: 0 auto;
