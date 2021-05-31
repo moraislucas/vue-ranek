@@ -11,13 +11,12 @@ import UsuarioVendas from '../views/usuario/UsuarioVendas.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     name: 'home',
     component: Home
   },
-  
+
   {
     path: '/produto/:id',
     name: 'produto',
@@ -32,8 +31,10 @@ const routes = [
   {
     path: '/usuario',
     component: Usuario,
-    children: [
-      {
+    meta: {
+      login: true
+    },
+    children: [{
         path: '',
         name: 'usuario',
         component: UsuarioProdutos,
@@ -52,7 +53,7 @@ const routes = [
         path: 'editar',
         name: 'usuario-editar',
         component: UsuarioEditar,
-      }
+      },
     ]
   },
 ]
@@ -62,7 +63,22 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
   scrollBehavior() {
-    return window.scrollTo({top: 0, behavior: "smooth"})
+    return window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    })
+  }
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.login)) {
+    if (!window.localStorage.token) {
+      next('/login');
+    } else {
+      next();
+    }
+  } else {
+    next();
   }
 })
 
