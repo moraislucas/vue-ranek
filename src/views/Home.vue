@@ -1,32 +1,13 @@
 <template>
   <section>
-    <h1>👍 Compre ou Venda 👎</h1>
-    <ProdutosBuscar />
-    <ProdutosLista />
+    <h1>👍 Home</h1>
   </section>
 </template>
 
 <script>
-import ProdutosBuscar from "@/components/ProdutosBuscar.vue";
-import ProdutosLista from "@/components/ProdutosLista.vue";
-
 export default {
   name: "Home",
-  components: {
-    ProdutosBuscar,
-    ProdutosLista,
-  },
-  created() {
-    document.title = "Home";
-  },
 };
 </script>
 
-<style scoped>
-h1 {
-  color: #87f;
-  margin-top: 40px;
-  text-align: center;
-  font-size: 2rem;
-}
-</style>
+

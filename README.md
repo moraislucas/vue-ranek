@@ -1,4 +1,4 @@
-# ranek
+# kpi-mestre
 
 ## Project setup
 ```

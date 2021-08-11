@@ -1,38 +1,38 @@
 <template>
   <div id="app">
-    <TheHeader />
+    <!-- <TheHeader /> -->
     <main id="main">
       <transition mode="out-in">
         <router-view />
       </transition>
     </main>
-    <TheFooter />
+    <!-- <TheFooter /> -->
   </div>
 </template>
 
 
 <script>
-import TheHeader from "@/components/TheHeader.vue";
-import TheFooter from "@/components/TheFooter.vue";
-import { api } from "@/services.js";
+// import TheHeader from "@/components/TheHeader.vue";
+// import TheFooter from "@/components/TheFooter.vue";
+// import { api } from "@/services.js";
 
 export default {
-  components: {
-    TheHeader,
-    TheFooter,
-  },
-  created() {
-    if (window.localStorage.token) {
-      api
-        .validateToken()
-        .then(() => {
-          this.$store.dispatch("getUsuario");
-        })
-        .catch(() => {
-          window.localStorage.removeItem("token");
-        });
-    }
-  },
+  // components: {
+  //   TheHeader,
+  //   TheFooter,
+  // },
+  // created() {
+  //   if (window.localStorage.token) {
+  //     api
+  //       .validateToken()
+  //       .then(() => {
+  //         this.$store.dispatch("getUsuario");
+  //       })
+  //       .catch(() => {
+  //         window.localStorage.removeItem("token");
+  //       });
+  //   }
+  // },
 };
 </script>
 
@@ -55,7 +55,7 @@ ul {
 body {
   font-family: "Montserrat", sans-serif;
   color: #345;
-  background: url("./assets/pattern.svg") repeat top;
+  /* background: url("./assets/pattern.svg") repeat top; */
 }
 a {
   color: #345;
